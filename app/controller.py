@@ -37,19 +37,19 @@ def login():
 
 @app.route('/SpryAssets/SpryValidationSelect.js')
 def js():
-    return send_file("templates\\SpryAssets\\SpryValidationSelect.js")
+    return send_file("templates/SpryAssets/SpryValidationSelect.js")
 
 @app.route('/SpryAssets/SpryValidationSelect.css')
 def css():
-    return send_file("templates\\SpryAssets\\SpryValidationSelect.css")
+    return send_file("templates/SpryAssets/SpryValidationSelect.css")
 
 @app.route('/SpryAssets/SpryValidationTextField.js')
 def tjs():
-    return send_file("templates\\SpryAssets\\SpryValidationTextField.js")
+    return send_file("templates/SpryAssets/SpryValidationTextField.js")
 
 @app.route('/SpryAssets/SpryValidationTextField.css')
 def tcss():
-    return send_file("templates\\SpryAssets\\SpryValidationTextField.css")
+    return send_file("templates/SpryAssets/SpryValidationTextField.css")
 
 @app.route('/search',methods=['GET', 'POST'])
 def search():
