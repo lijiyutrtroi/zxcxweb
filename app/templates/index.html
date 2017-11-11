@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <meta name="viewport" content="width=device-width" />
+<script src="SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0em;
+      font-size: 1rem;
+      font-family: 'Operator Mono', 'Source Sans Pro', Menlo, Monaco, Consolas, Courier New, monospace;
+    }
+
+    html {
+      width: 100vw;
+      height: 100vh;
+    }
+    body {
+      position: relative;
+      background:url(http://api.dujin.org/bing/1366.php) no-repeat;background-size: cover;
+      background-color: rgba(0,0,0,0.5);/* IE9、标准浏览器、IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂 */
+    }
+    .parent {
+      margin: 0 auto;
+      text-align: center;
+      }
+    .parent form{
+      color: #FFFFFF;
+    }
+  .demo{
+
+  background-color: rgba(0,0,0,0.5);/* IE9、标准浏览器、IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂 */
+}
+.demo p{
+  color: #FFFFFF;
+}
+@media \0screen\,screen\9 {/* 只支持IE6、7、8 */
+  .demo{
+    background-color:#000000;
+    filter:Alpha(opacity=50);
+    position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+    *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+  }
+  .demo p{
+    position: relative;/* 设置子元素为相对定位，可让子元素不继承Alpha值 */
+  }
+}
+  </style>
+  <style>
+    @media (max-width: 600px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
+      body {
+         font-size: 3vw;
+      }
+      .parent {
+        margin-top: 20vh;
+
+      }
+      select {
+        width: 30vw;
+        margin-top: 1vh;
+        padding: 5px;
+      }
+      .demo {
+        width:100%;
+      }
+      .sum {
+        width: 10vmax;
+      }
+}
+  </style>
+  <style>
+    @media screen and (min-width: 600px) { /*当屏幕尺寸大于600px时，应用下面的CSS样式*/
+      select{
+        width: 200px;
+        margin: 5px auto;
+      }
+      .demo {
+        margin: 25vh auto;
+        width: 50%;
+      }
+      .sum {
+        width: 10vmax;
+      }
+
+}
+  </style>
+</head>
+<body style="overflow: hidden" >
+<div class="parent demo">
+<form name="form1" method="post" action="/search">
+  <p>  <strong>学年学期:</strong><span id="spryselect1">
+    <select name="zxxnxq" class="select">
+      <option value="-1">请选择</option>
+      <option value="2017-2018-1-1">2017-2018学年秋(两学期)</option>
+      <option value="2016-2017-1-1">2016-2017学年秋(两学期)</option>
+      <option value="2016-2017-2-1">2016-2017学年春(两学期)</option>
+      <option value="2015-2016-1-1">2015-2016学年秋(两学期)</option>
+      <option value="2015-2016-2-1">2015-2016学年春(两学期)</option>
+      <option value="2014-2015-1-1">2014-2015学年秋(两学期)</option>
+      <option value="2014-2015-2-1">2014-2015学年春(两学期)</option>
+      <option value="2013-2014-1-1">2013-2014学年秋(两学期)</option>
+      <option value="2013-2014-2-1">2013-2014学年春(两学期)</option>
+      <option value="2012-2013-1-1">2012-2013学年秋(两学期)</option>
+      <option value="2012-2013-2-1">2012-2013学年春(两学期)</option>
+    </select>
+  <span class="selectInvalidMsg">请选择一个有效的项目。</span><span class="selectRequiredMsg">请选择一个项目。</span></span></p>
+  <p><strong>校区：</strong><span id="spryselect2">
+    <select name="zxXaq" style="width:160" class="select" >
+      <option value="-1">请选择</option>
+      <option value="1">松山校区</option>
+      <option value="2">滨海校区</option>
+    </select><br>
+    <span class="selectInvalidMsg">请选择一个有效的项目。</span><span class="selectRequiredMsg">请选择一个项目。</span></span><strong>教学楼：</strong><span id="spryselect3">
+    <select name="zxJxl" class="select" style="width:130" >
+      <option value="-1">请选择</option>
+      <option value="201">（滨海校区）运动场</option>
+      <option value="202">（滨海校区）教学楼</option>
+      <option value="203">（滨海校区）工科楼</option>
+      <option value="204">（滨海校区）文科楼</option>
+      <option value="205">（滨海校区）航运楼</option>
+      <option value="01">经法楼A区</option>
+      <option value="02">经法楼B区</option>
+      <option value="03">经法楼C区</option>
+      <option value="04">人文楼A区</option>
+      <option value="05">人文楼B区</option>
+      <option value="06">人文楼D区</option>
+      <option value="07">理工1号楼</option>
+      <option value="08">理工2号楼</option>
+      <option value="09">理工3号楼</option>
+      <option value="10">理工4号楼</option>
+      <option value="11">综合南楼</option>
+      <option value="12">综合北楼</option>
+      <option value="13">综合楼阶梯</option>
+      <option value="14">音乐楼</option>
+      <option value="15">综合实验楼南楼</option>
+      <option value="16">综合实验楼北楼</option>
+      <option value="17">西区主楼</option>
+      <option value="18">西区J楼</option>
+      <option value="19">运动场</option>
+      <option value="20">体育馆</option>
+      <option value="21">图书馆</option>
+      <option value="22">人文楼C区</option>
+      <option value="23">景观楼</option>
+      <option value="24">学团楼</option>
+    </select><br>
+    <span class="selectInvalidMsg">请选择一个有效的项目。</span><span class="selectRequiredMsg">请选择一个项目。</span></span></p>
+  <p><strong>周次：</strong><span id="spryselect4">
+    <select name="zxZc" id="zxZc">
+      <option value="-1">请选择</option>
+      <option value="1">第1周</option>
+      <option value="2">第2周</option>
+      <option value="3">第3周</option>
+      <option value="4">第4周</option>
+      <option value="5">第5周</option>
+      <option value="6">第6周</option>
+      <option value="7">第7周</option>
+      <option value="8">第8周</option>
+      <option value="9">第9周</option>
+      <option value="10">第10周</option>
+      <option value="11">第11周</option>
+      <option value="12">第12周</option>
+      <option value="13">第13周</option>
+      <option value="14">第14周</option>
+      <option value="15">第15周</option>
+      <option value="16">第16周</option>
+      <option value="17">第17周</option>
+      <option value="18">第18周</option>
+      <option value="19">第19周</option>
+      <option value="20">第20周</option>
+      <option value="21">第21周</option>
+      <option value="22">第22周</option>
+      <option value="23">第23周</option>
+      <option value="24">第24周</option>
+    </select><br>
+    <span class="selectInvalidMsg">请选择一个有效的项目。</span><span class="selectRequiredMsg">请选择一个项目。</span></span><strong>节次：</strong><span id="spryselect5">
+    <select name="zxJc" id="zxJc">
+      <option value="-1">请选择</option>
+      <option value="1,2">第1-2节</option>
+      <option value="3,4">第3-4节</option>
+      <option value="5,6">第5-6节</option>
+      <option value="7,8">第7-8节</option>
+      <option value="9,10">第9-10节</option>
+      <option value="11,12">第11-12节</option>
+      <option value="13">第13节</option>
+    </select><br>
+    <span class="selectInvalidMsg">请选择一个有效的项目。</span><span class="selectRequiredMsg">请选择一个项目。</span></span><strong>星期： </strong><span id="spryselect6">
+    <select name="zxxq" id="zxxq">
+      <option value="-1">请选择</option>
+      <option value="1">星期一</option>
+      <option value="2">星期二</option>
+      <option value="3">星期三</option>
+      <option value="4">星期四</option>
+      <option value="5">星期五</option>
+      <option value="6">星期六</option>
+      <option value="7">星期日</option>
+    </select>
+    <span class="selectInvalidMsg">请选择一个有效的项目。</span><span class="selectRequiredMsg">请选择一个项目。</span></span></p>
+  <p>
+    <input type="submit" name="submit" id="submit" value="确定" style="border-radius: 5px;border: 1px solid dodgerblue" class="sum">
+  </p>
+  <p style="color:#F00;">
+    {{notfind}}
+  </p>
+</form>
+ </div>
+<script type="text/javascript">
+var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {invalidValue:"-1"});
+var spryselect2 = new Spry.Widget.ValidationSelect("spryselect2", {invalidValue:"-1"});
+var spryselect3 = new Spry.Widget.ValidationSelect("spryselect3", {invalidValue:"-1"});
+var spryselect4 = new Spry.Widget.ValidationSelect("spryselect4", {invalidValue:"-1"});
+var spryselect5 = new Spry.Widget.ValidationSelect("spryselect5", {invalidValue:"-1"});
+var spryselect6 = new Spry.Widget.ValidationSelect("spryselect6", {invalidValue:"-1"});
+</script>
+</body>
+</html>
